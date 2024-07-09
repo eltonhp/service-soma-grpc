@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc.soma.service";
+
+
+package service;
+
+message SomaRequest {
+  double first_number = 1;
+  double second_number = 2;
+}
+
+message SomaResponse {
+  double resultado_soma = 1;
+}
+
+
+service CalculadoraService {
+  rpc somar(SomaRequest) returns (SomaResponse) {}
+}
